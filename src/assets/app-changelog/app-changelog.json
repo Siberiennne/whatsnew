@@ -1,0 +1,47 @@
+[
+    {
+        "date": "2020-11-03",
+        "title": "Set reminders and never miss a thing!",
+        "content": "<p>Whether it’s an important report or a meeting with your customer, just set a reminder and move on with your day. When it’s time, Planyway will send you a push notification so you never miss out on tasks that matter.</p><p><a href='https://planyway.com/help/reminders' target='_blank'>Learn more</a></p><img height='355.5px' src='https://dev-planyway-files-cdn-ms.azureedge.net/assets/3.1.827-dev/app-changelog/resources/reminders.png' alt='Set reminders' />"
+    },
+    {
+        "date": "2020-10-27",
+        "title": "Group tasks by label on timeline",
+        "content": "<p>Build a clear roadmap for each type of work you are doing.</p> <img height='355.5px' src='https://dev-planyway-files-cdn-ms.azureedge.net/assets/3.1.827-dev/app-changelog/resources/group-tasks-by-labels.png' alt='Planyway group tasks by labels' />"
+    },
+    {
+        "date": "2020-10-20",
+        "title": "Advanced Checklists: a new way to get work done!",
+        "content": "<p>Everyone loves task lists, right?</p><p>No doubt it’s a fantastic way to organize work and God bless this motivating feeling when you complete tasks once they’re done…</p><p>But we went much further and are happy to announce the Advanced Checklists!<video autoplay loop muted playsinline height='355px' src='https://dev-planyway-files-cdn-ms.azureedge.net/assets/3.1.827-dev/app-changelog/resources/advanced-checklists.mp4' alt='PW advanced checklists' />"
+    },
+    {
+        "date": "2020-10-09",
+        "title": "Meet Weekly & Monthly views in Mobile apps",
+        "content": "<p>Plan out your week or month in a visual manner anytime and anywhere right in your mobile.</p><p><a href='https://planyway.com/help/mobile-apps' target='_blank'>Learn more</a> </p><img height='355px' src='https://dev-planyway-files-cdn-ms.azureedge.net/assets/3.1.827-dev/app-changelog/resources/mobile-views.png' alt='Planyway mobile apps' />"
+    },
+    {
+        "date": "2020-09-16",
+        "title": "Meet Time tracking",
+        "content": "<p>Track your team performance and see how much time your team spends on a given task or project.</p><p><a href='https://planyway.com/help/features/time-tracking' target='_blank'>Learn more</a> </p><img height='344px' src='https://dev-planyway-files-cdn-ms.azureedge.net/assets/3.1.827-dev/app-changelog/resources/time-records.png' alt='Planyway tile tracking' />"
+    },
+    {
+        "date": "2020-05-12",
+        "title": "New: Connect your Google Calendar to Planyway",
+        "content": "<p>Add your Google Calendar to Planyway to get an overview of your whole schedule. See and update Google Calendar events right in Planyway.</p><p><a href='https://planyway.com/help/features/google-calendar-integration' target='_blank'>Learn more</a> </p><img height='370px' src='https://dev-planyway-files-cdn-ms.azureedge.net/assets/3.1.827-dev/app-changelog/resources/google-connect.png' alt='Planyway google connect' />"
+    },
+    {
+        "date": "2020-03-31",
+        "title": "New: Assign team members and dates to checklist items",
+        "content": "<p>Assign team members and due dates to checklist items to make it clear who’s doing what and when it needs to be done. Checklist items with due dates will be shown as particular cards on a calendar, so you can manage your team’s workload.</p><p><a href='https://planyway.com/help/features/assign-team-members-and-dates-to-checklist-items' target='_blank'>Learn more</a> </p><img height='331px' src='https://dev-planyway-files-cdn-ms.azureedge.net/assets/3.1.827-dev/app-changelog/resources/assign-team-members-and-dates-to-checklist-items.png' alt='Planyway checklists' />"
+    },
+    {
+        "date": "2020-03-03",
+        "title": "New: add detailed descriptions to Planyway cards",
+        "content": "<p>Add links, details and important information to Planyway cards, and format them using simple Markdown syntax.</p><p><a href='https://planyway.com/help/features/markdown-syntax-in-planyway-card-descriptions' target='_blank'>Learn more</a> </p><img height='331px' src='https://dev-planyway-files-cdn-ms.azureedge.net/assets/3.1.827-dev/app-changelog/resources/card-description.png' alt='Planyway markdown' />"
+    },
+    {
+        "date": "2020-02-28",
+        "title": "Meet the weekly view in the Planyway iOS app",
+        "content": "<p>Get an overview of your whole week to visualize what will be due on your busiest days.</p><p><a href='https://planyway.com/help/features/day-3-day-and-weekly-views-for-planning-out-schedules-in-planyway-for-ios' target='_blank'>Learn more</a> </p><img height='405px' src='https://dev-planyway-files-cdn-ms.azureedge.net/assets/3.1.827-dev/app-changelog/resources/mobile-week-view.png' alt='Planyway iOS weekly view' />"
+    }
+]
