@@ -2,13 +2,9 @@
   background-color: white;
   min-width: 632px;
   margin: 0px auto;
-  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
-  padding: 20px 30px;
-}
-
-.main-title {
-  font-weight: bold;
-  /* padding-bottom: 10px; */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid lightgrey;
+  padding: 20px 30px 10px;
 }
 
 .layout-grid {

@@ -35,10 +35,6 @@ export class HttpService {
         });
     }
 
-    // getData(): Observable<TResponse> {
-    //     return this.http.get<TResponse>(this.urlServer);
-    // }
-
     putUserDataToURL(url: string, data: TFormData) {
         let bodyRequest: TRequest = {
             memberName: data.userName,
