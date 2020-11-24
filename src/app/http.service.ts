@@ -11,7 +11,7 @@ import { catchError, map } from 'rxjs/operators';
 @Injectable()
 export class HttpService {
 
-    urlJSON = 'assets/app-changelog/app-changelog.json';
+    urlJSON = 'https://dev.planyway.com/app-changelog/app-changelog.json';
     urlServer = 'https://dev.planyway.com/api/b/feedback/link';
 
     appType: string = "Site";
