@@ -22,13 +22,16 @@
     >
       Send feedback
     </button>
+
     <form
       [style.display]="formVisibility ? 'block' : 'none'"
       action="https://dev.planyway.com/api/b/feedback/link"
       method="get"
     >
       <fieldset [disabled]="!formAvailability">
+        
         <h2 class="form__block">Contact support</h2>
+
         <div class="form__block user-info-input">
           <name-input-component (nameInputEvent)="inputName($event)">
           </name-input-component>
@@ -42,6 +45,7 @@
         </message-input-component>
 
         <div class="form__block form__buttons">
+
           <button
             mat-stroked-button
             class="form__buttons__item"
@@ -50,6 +54,7 @@
           >
             Cancel
           </button>
+
           <button
             mat-stroked-button
             mat-raised-button
@@ -60,6 +65,7 @@
           >
             Send
           </button>
+
         </div>
       </fieldset>
     </form>

@@ -24,11 +24,6 @@ export class AppComponent implements OnInit {
   formAvailability: boolean = true;
 
   constructor(private httpService: HttpService, private _snackBar: MatSnackBar, public loader: LoadingBarService) {
-
-    const state = this.loader.useRef();
-
-    state.start();
-    state.complete();
   }
 
   ngOnInit() {
@@ -53,6 +48,10 @@ export class AppComponent implements OnInit {
     this.userName = value;
   }
 
+  inputMessage(value: string) {
+    this.userMessage = value;
+  }
+
   cancelMessage() {
     this.cleanInputs();
     this.formVisibility = false;
@@ -66,8 +65,7 @@ export class AppComponent implements OnInit {
       userEmail: this.userEmail,
       userMessage: this.userMessage
     }
-
-    console.log(formData);
+    
     return this.httpService.getResponse().subscribe(responseURL => {
       this.httpService.putUserDataToURL(responseURL, formData).subscribe(
         response => {
@@ -83,9 +81,9 @@ export class AppComponent implements OnInit {
   }
 
   cleanInputs() {
-    this.userName = "";
-    this.userMessage = "";
+    this.inputName("");
     this.inputEmail("");
+    this.inputMessage("");
   }
 
   openSnackBar(status: 'success' | 'error', error?: string) {
