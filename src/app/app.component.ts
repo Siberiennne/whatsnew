@@ -1,3 +1,4 @@
+import { DateFormatter } from './../helper/DateFormatter';
 import { TFormData } from '../types/TFormData';
 import { TChangelog } from '../types/TChangelog';
 import { HttpService } from './http.service';
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit {
   userEmail: string = "";
   userMessage: string = "";
   formVisibility: boolean = false;
+  formAvailability: boolean = true;
 
   constructor(private httpService: HttpService, private _snackBar: MatSnackBar, public loader: LoadingBarService) {
 
@@ -33,8 +35,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.httpService.getChangelog().subscribe((data: TChangelog[]) => {
+      data.forEach(value => {
+        value.date = DateFormatter.formatDate(value.date);
+      })
       this.changelog = data
     });
+
   }
 
   showForm() {
@@ -56,6 +62,8 @@ export class AppComponent implements OnInit {
   }
 
   sendMessage() {
+    this.formAvailability = false;
+
     let formData: TFormData = {
       userName: this.userName,
       userEmail: this.userEmail,
@@ -65,9 +73,11 @@ export class AppComponent implements OnInit {
     return this.httpService.getResponse().subscribe(responseURL => {
       this.httpService.putUserDataToURL(responseURL, formData).subscribe(
         response => {
+          this.formAvailability = true;
           this.openSnackBar('success')
         },
         err => {
+          this.formAvailability = true;
           this.openSnackBar('error', err)
         });
     });
