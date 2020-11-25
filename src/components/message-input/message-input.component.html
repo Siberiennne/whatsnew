@@ -1,0 +1,13 @@
+<mat-form-field class="example-full-width">
+  <textarea
+    #message
+    matInput
+    rows="10"
+    type="text"
+    name="user_message"
+    placeholder="Your message"
+    class="form__block"
+    (change)="inputMessage(message.value)"
+    required
+  ></textarea>
+</mat-form-field>

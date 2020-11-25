@@ -37,18 +37,9 @@
             (emailInputEvent)="inputEmail($event)"
           ></email-input-component>
         </div>
-        <mat-form-field class="example-full-width">
-          <textarea
-            matInput
-            rows="10"
-            type="text"
-            name="user_message"
-            [(ngModel)]="userMessage"
-            placeholder="Your message"
-            class="form__block"
-            required
-          ></textarea>
-        </mat-form-field>
+
+        <message-input-component (messageInputEvent)="inputMessage($event)">
+        </message-input-component>
 
         <div class="form__block form__buttons">
           <button

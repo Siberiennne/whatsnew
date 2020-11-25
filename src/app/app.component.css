@@ -25,13 +25,10 @@
   }
 }
 
-
-
 button#open_form {
   position: fixed;
   bottom: 0;
 }
-
 
 form {
   position: fixed;

@@ -1,3 +1,4 @@
+import { MessageInputComponent } from '../components/message-input/message-input.component';
 import { NameInputComponent } from './../components/name-input/name-input.component';
 import { NewsListComponent } from '../components/news-list/news-list.component';
 import { EmailInputComponent } from '../components/email-input/email-input.component';
@@ -19,7 +20,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
-    AppComponent, NameInputComponent,EmailInputComponent, NewsListComponent
+    AppComponent, NameInputComponent, EmailInputComponent, MessageInputComponent, NewsListComponent
   ],
   imports: [
     BrowserModule,
