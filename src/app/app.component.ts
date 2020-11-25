@@ -3,7 +3,6 @@ import { TFormData } from '../types/TFormData';
 import { TChangelog } from '../types/TChangelog';
 import { HttpService } from './http.service';
 import { Component, OnInit } from '@angular/core';
-import { ProgressAnimationEnd } from '@angular/material/progress-bar';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -13,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   title = 'Whatsup new in Planyway';
 
@@ -29,8 +29,6 @@ export class AppComponent implements OnInit {
 
     state.start();
     state.complete();
-
-    const value$ = state.value$;
   }
 
   ngOnInit() {
@@ -51,14 +49,13 @@ export class AppComponent implements OnInit {
     this.userEmail = value;
   }
 
-  loadData(value: ProgressAnimationEnd) {
-
+  inputName(value: string) {
+    this.userName = value;
   }
 
   cancelMessage() {
     this.cleanInputs();
     this.formVisibility = false;
-
   }
 
   sendMessage() {
@@ -70,6 +67,7 @@ export class AppComponent implements OnInit {
       userMessage: this.userMessage
     }
 
+    console.log(formData);
     return this.httpService.getResponse().subscribe(responseURL => {
       this.httpService.putUserDataToURL(responseURL, formData).subscribe(
         response => {

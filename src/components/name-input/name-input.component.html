@@ -1,0 +1,11 @@
+<mat-form-field class="example-full-width">
+  <input
+    #name
+    matInput
+    type="text"
+    name="user_name"
+    placeholder="Your name"
+    (change)="inputName(name.value)"
+    required
+  />
+</mat-form-field>

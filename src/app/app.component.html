@@ -30,16 +30,9 @@
       <fieldset [disabled]="!formAvailability">
         <h2 class="form__block">Contact support</h2>
         <div class="form__block user-info-input">
-          <mat-form-field class="example-full-width">
-            <input
-              matInput
-              type="text"
-              name="user_name"
-              [(ngModel)]="userName"
-              placeholder="Your name"
-              required
-            />
-          </mat-form-field>
+          <name-input-component (nameInputEvent)="inputName($event)">
+          </name-input-component>
+
           <email-input-component
             (emailInputEvent)="inputEmail($event)"
           ></email-input-component>
