@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -31,7 +32,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatCardModule,
     MatProgressBarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    LoadingBarHttpClientModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

@@ -1,10 +1,10 @@
-import { TResponse } from './../types/TResponse';
-import { TRequest } from './../types/TRequest';
+import { TResponse } from '../types/TResponse';
+import { TRequest } from '../types/TRequest';
 import { TFormData } from '../types/TFormData';
 import { TChangelog } from '../types/TChangelog';
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
@@ -22,17 +22,6 @@ export class HttpService {
 
     getChangelog(): Observable<TChangelog[]> {
         return this.http.get<TChangelog[]>(this.urlJSON);
-    }
-
-    sendMessage(data: TFormData) {
-
-        return this.http.get<TResponse>(this.urlServer).pipe(map(response => {
-            return response.data;
-        })).subscribe(responseURL => {
-            this.putUserDataToURL(responseURL, data).subscribe(
-                response => { console.log(response.status) },
-                err => console.log("Failed to put data " + err));
-        });
     }
 
     putUserDataToURL(url: string, data: TFormData) {

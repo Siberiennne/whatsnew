@@ -2,6 +2,10 @@ import { TFormData } from '../types/TFormData';
 import { TChangelog } from '../types/TChangelog';
 import { HttpService } from './http.service';
 import { Component, OnInit } from '@angular/core';
+import { ProgressAnimationEnd } from '@angular/material/progress-bar';
+import { LoadingBarService } from '@ngx-loading-bar/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-root',
@@ -17,8 +21,14 @@ export class AppComponent implements OnInit {
   userMessage: string = "";
   formVisibility: boolean = false;
 
-  constructor(private httpService: HttpService) {
+  constructor(private httpService: HttpService, private _snackBar: MatSnackBar, public loader: LoadingBarService) {
 
+    const state = this.loader.useRef();
+
+    state.start();
+    state.complete();
+
+    const value$ = state.value$;
   }
 
   ngOnInit() {
@@ -35,6 +45,10 @@ export class AppComponent implements OnInit {
     this.userEmail = value;
   }
 
+  loadData(value: ProgressAnimationEnd) {
+
+  }
+
   cancelMessage() {
     this.cleanInputs();
     this.formVisibility = false;
@@ -48,12 +62,36 @@ export class AppComponent implements OnInit {
       userMessage: this.userMessage
     }
 
-    this.httpService.sendMessage(formData);
+    return this.httpService.getResponse().subscribe(responseURL => {
+      this.httpService.putUserDataToURL(responseURL, formData).subscribe(
+        response => {
+          this.openSnackBar('success')
+        },
+        err => {
+          this.openSnackBar('error', err)
+        });
+    });
+
   }
 
   cleanInputs() {
     this.userName = "";
     this.userMessage = "";
     this.inputEmail("");
+  }
+
+  openSnackBar(status: 'success' | 'error', error?: string) {
+    let message = '';
+
+    if (status == 'success') {
+      message = 'Message was successfully sent!';
+    }
+    else if (status == 'error' && error) {
+      message = 'Failed to send message: ' + error;
+    }
+
+    this._snackBar.open(message, '', {
+      duration: 2000,
+    });
   }
 }
