@@ -36,54 +36,34 @@ export class AppComponent implements OnInit {
 
   }
 
-  showForm() {
-    this.formVisibility = true;
-  }
-
-  inputEmail(value: string) {
-    this.userEmail = value;
-  }
-
-  inputName(value: string) {
-    this.userName = value;
-  }
-
-  inputMessage(value: string) {
-    this.userMessage = value;
-  }
-
   cancelMessage() {
     this.cleanInputs();
     this.formVisibility = false;
   }
 
   sendMessage() {
-    this.formAvailability = false;
+    this.disableForm();
 
     let formData: TFormData = {
       userName: this.userName,
       userEmail: this.userEmail,
       userMessage: this.userMessage
     }
-    
+
     return this.httpService.getResponse().subscribe(responseURL => {
       this.httpService.putUserDataToURL(responseURL, formData).subscribe(
         response => {
-          this.formAvailability = true;
+          this.makeFormAvailable();
+          this.closeForm();
           this.openSnackBar('success')
         },
         err => {
-          this.formAvailability = true;
+          this.makeFormAvailable();
+          this.closeForm();
           this.openSnackBar('error', err)
         });
     });
 
-  }
-
-  cleanInputs() {
-    this.inputName("");
-    this.inputEmail("");
-    this.inputMessage("");
   }
 
   openSnackBar(status: 'success' | 'error', error?: string) {
@@ -99,5 +79,39 @@ export class AppComponent implements OnInit {
     this._snackBar.open(message, '', {
       duration: 2000,
     });
+  }
+
+  inputEmail(value: string) {
+    this.userEmail = value;
+  }
+
+  inputName(value: string) {
+    this.userName = value;
+  }
+
+  inputMessage(value: string) {
+    this.userMessage = value;
+  }
+
+  cleanInputs() {
+    this.inputName("");
+    this.inputEmail("");
+    this.inputMessage("");
+  }
+
+  showForm() {
+    this.formVisibility = true;
+  }
+
+  closeForm() {
+    this.formVisibility = false;
+  }
+
+  makeFormAvailable() {
+    this.formAvailability = true;
+  }
+
+  disableForm() {
+    this.formAvailability = false;
   }
 }
