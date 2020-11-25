@@ -25,22 +25,11 @@
   }
 }
 
-ul {
-  padding: 0px;
-}
 
-li {
-  list-style-type: none;
-}
 
 button#open_form {
   position: fixed;
   bottom: 0;
-}
-
-.news-card {
-  width: 632px;
-  margin-bottom: 20px;
 }
 
 
@@ -52,6 +41,10 @@ form {
   max-width: 400px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: gray;
+}
+
+fieldset {
+  border: none;
 }
 
 .form__block {

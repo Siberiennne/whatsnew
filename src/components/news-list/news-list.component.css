@@ -1,0 +1,12 @@
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.news-card {
+  width: 632px;
+  margin-bottom: 20px;
+}
